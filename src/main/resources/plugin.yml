@@ -1,0 +1,38 @@
+name: PincerEssentials
+version: '1.0'
+main: me.pincer.pincerEssentials.PincerEssentials
+api-version: '1.21'
+commands:
+  gma:
+    usage: /gma
+    permission: gamemode.adventure
+  gmsp:
+    usage: /gmsp
+    permission: gamemode.spectator
+  gmc:
+    usage: /gmc
+    permission: gamemode.creative
+  gms:
+    usage: /gms
+    permission: gamemode.survival
+  god:
+    usage: /god
+    permission: essentials.godmode
+  fix:
+    usage: /fix
+    permission: essentials.fix
+  trash:
+    usage: /trash
+    permission: essentials.trash
+  openinv:
+    usage: /openinv [player]
+    permission: essentials.openinv
+  openender:
+    usage: /openender [player]
+    permission: essentials.openender
+  tpa:
+    usage: /tpa [player]
+    permission: essentials.tpa
+  tpaccept:
+    usage: /tpaccept
+    permission: default

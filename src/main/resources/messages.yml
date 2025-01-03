@@ -1,0 +1,23 @@
+# GodModeCommand messages
+god_mode_enabled: "God mode enabled."
+god_mode_disabled: "God mode disabled."
+
+# FixCommand messages
+item_repaired: "The item in your hand has been repaired."
+
+# TrashCommand messages
+trash_inventory_title: "Trash"
+
+# GMCommand messages
+gamemode_survival: "Your gamemode has been set to survival mode."
+gamemode_creative: "Your gamemode has been set to creative mode."
+gamemode_spectator: "Your gamemode has been set to spectator mode."
+gamemode_adventure: "Your gamemode has been set to adventure mode."
+
+# TPACommand messages
+tpa_request_sent: "Teleport request sent to {player}."
+tpa_request_received: "{player} has requested to teleport to you. Type /tpaccept to accept."
+tpa_request_accepted: "Teleport request accepted."
+tpa_teleporting: "Teleporting to {player}."
+tpa_no_request: "No pending teleport requests."
+tpa_player_not_found: "Player not found."
