@@ -1,7 +1,9 @@
+// Java
 package me.pincer.pincerEssentials;
 
 import me.pincer.pincerEssentials.command.*;
 import me.pincer.pincerEssentials.listener.OpenEnderListener;
+import me.pincer.pincerEssentials.listener.OpenInventoryListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class PincerEssentials extends JavaPlugin {
@@ -14,6 +16,7 @@ public final class PincerEssentials extends JavaPlugin {
         languageManager = new LanguageManager(this);
 
         OpenEnderCommand openEnderCommand = new OpenEnderCommand();
+        OpenInventoryCommand openInventoryCommand = new OpenInventoryCommand();
 
         getCommand("gms").setExecutor(new GMCommand());
         getCommand("gmc").setExecutor(new GMCommand());
@@ -22,12 +25,13 @@ public final class PincerEssentials extends JavaPlugin {
         getCommand("god").setExecutor(new GodModeCommand());
         getCommand("fix").setExecutor(new FixCommand());
         getCommand("trash").setExecutor(new TrashCommand());
-        getCommand("openinv").setExecutor(new OpenInventoryCommand());
+        getCommand("openinv").setExecutor(openInventoryCommand);
         getCommand("openender").setExecutor(openEnderCommand);
         getCommand("tpa").setExecutor(new TPACommand());
         getCommand("tpaccept").setExecutor(new TPACommand());
 
         getServer().getPluginManager().registerEvents(new OpenEnderListener(openEnderCommand.getTaskMap()), this);
+        getServer().getPluginManager().registerEvents(new OpenInventoryListener(openInventoryCommand.getTaskMap()), this);
     }
 
     public static PincerEssentials getInstance() {
