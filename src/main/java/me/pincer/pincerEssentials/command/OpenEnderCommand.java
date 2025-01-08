@@ -6,9 +6,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -16,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public class OpenEnderCommand implements CommandExecutor, Listener {
+public class OpenEnderCommand implements CommandExecutor {
     private final Map<UUID, Integer> taskMap = new HashMap<>();
 
     @Override
@@ -42,14 +39,7 @@ public class OpenEnderCommand implements CommandExecutor, Listener {
         return true;
     }
 
-    @EventHandler
-    public void onInventoryClose(InventoryCloseEvent event) {
-        Player player = (Player) event.getPlayer();
-        UUID playerId = player.getUniqueId();
-
-        if (taskMap.containsKey(playerId)) {
-            Bukkit.getScheduler().cancelTask(taskMap.get(playerId));
-            taskMap.remove(playerId);
-        }
+    public Map<UUID, Integer> getTaskMap() {
+        return taskMap;
     }
 }
