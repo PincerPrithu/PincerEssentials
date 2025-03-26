@@ -33,6 +33,39 @@ commands:
   tpa:
     usage: /tpa [player]
     permission: essentials.tpa
+  tpahere:
+    usage: /tpahere [player]
+    permission: essentials.tpahere
   tpaccept:
     usage: /tpaccept
-    permission: default
+    permission: essentials.tpaccept
+  tpdeny:
+    usage: /tpdeny
+    permission: essentials.tpdeny
+  tp:
+    usage: /tp [target] or /tp [player1] [player2]
+    permission: essentials.tp
+  tphere:
+    usage: /tphere [player]
+    permission: essentials.tphere
+  back:
+    usage: /back
+    permission: essentials.back
+  sethome:
+    usage: /sethome
+    permission: essentials.sethome
+  home:
+    usage: /home
+    permission: essentials.home
+  setwarp:
+    usage: /setwarp <name>
+    permission: essentials.setwarp
+  warp:
+    usage: /warp <name>
+    permission: essentials.warp
+  delwarp:
+    usage: /delwarp <name>
+    permission: essentials.delwarp
+  spawn:
+    usage: /spawn
+    permission: essentials.spawn

@@ -1,0 +1,13 @@
+me\pincer\pincerEssentials\LanguageManager.class
+me\pincer\pincerEssentials\command\OpenEnderCommand$1.class
+me\pincer\pincerEssentials\command\OpenEnderCommand.class
+me\pincer\pincerEssentials\command\OpenInventoryCommand$1.class
+me\pincer\pincerEssentials\command\TPACommand.class
+me\pincer\pincerEssentials\listener\OpenInventoryListener.class
+me\pincer\pincerEssentials\PincerEssentials.class
+me\pincer\pincerEssentials\command\FixCommand.class
+me\pincer\pincerEssentials\command\OpenInventoryCommand.class
+me\pincer\pincerEssentials\listener\OpenEnderListener.class
+me\pincer\pincerEssentials\command\TrashCommand.class
+me\pincer\pincerEssentials\command\GMCommand.class
+me\pincer\pincerEssentials\command\GodModeCommand.class

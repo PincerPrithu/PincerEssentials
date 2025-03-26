@@ -14,10 +14,48 @@ gamemode_creative: "Your gamemode has been set to creative mode."
 gamemode_spectator: "Your gamemode has been set to spectator mode."
 gamemode_adventure: "Your gamemode has been set to adventure mode."
 
-# TPACommand messages
+# Teleport (TP) and TPA messages
+tpa_usage: "Usage: /tpa <player>"
 tpa_request_sent: "Teleport request sent to {player}."
 tpa_request_received: "{player} has requested to teleport to you. Type /tpaccept to accept."
 tpa_request_accepted: "Teleport request accepted."
 tpa_teleporting: "Teleporting to {player}."
 tpa_no_request: "No pending teleport requests."
 tpa_player_not_found: "Player not found."
+
+tpahere_usage: "Usage: /tpahere <player>"
+tpahere_request_sent: "Teleport request sent to {player}."
+tpahere_request_received: "{player} has requested you teleport to them. Type /tpaccept to accept."
+tpahere_request_accepted: "Teleport request accepted."
+tpahere_teleporting: "Teleporting {player} to you."
+
+tpa_request_denied: "Teleport request denied by {player}."
+tpa_request_denied_sent: "You have denied the teleport request."
+
+tp_usage: "Usage: /tp <target> or /tp <player1> <player2>"
+tp_teleported: "Teleported to {player}."
+tp_teleported_admin: "Teleported {player1} to {player2}."
+
+tphere_usage: "Usage: /tphere <player>"
+tphere_teleported: "Teleported {player} to you."
+tphere_teleported_to: "You have been teleported to {player}."
+
+back_no_location: "No previous location found."
+back_teleported: "Teleported to your previous location."
+
+sethome_set: "Home set successfully."
+home_not_set: "Home is not set. Use /sethome to set your home."
+home_teleported: "Teleported to your home."
+
+setwarp_usage: "Usage: /setwarp <name>"
+setwarp_set: "Warp '{warp}' set successfully."
+warp_usage: "Usage: /warp <name>"
+warp_not_found: "Warp '{warp}' not found."
+warp_teleported: "Teleported to warp '{warp}'."
+
+delwarp_usage: "Usage: /delwarp <name>"
+delwarp_removed: "Warp '{warp}' has been removed."
+
+spawn_teleported: "Teleported to spawn."
+
+command_player_only: "Only players can execute this command."
