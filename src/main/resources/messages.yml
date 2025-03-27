@@ -1,61 +1,93 @@
-# GodModeCommand messages
-god_mode_enabled: "God mode enabled."
-god_mode_disabled: "God mode disabled."
+# =====================
+# God Mode Command
+# =====================
+god_mode_enabled: "&aGod mode enabled."
+god_mode_disabled: "&cGod mode disabled."
 
-# FixCommand messages
-item_repaired: "The item in your hand has been repaired."
+# =====================
+# Fix Command
+# =====================
+item_repaired: "&aThe item in your hand has been repaired."
 
-# TrashCommand messages
-trash_inventory_title: "Trash"
+# =====================
+# Trash Command
+# =====================
+trash_inventory_title: "&8&lTrash"
 
-# GMCommand messages
-gamemode_survival: "Your gamemode has been set to survival mode."
-gamemode_creative: "Your gamemode has been set to creative mode."
-gamemode_spectator: "Your gamemode has been set to spectator mode."
-gamemode_adventure: "Your gamemode has been set to adventure mode."
+# =====================
+# Gamemode Command (GMCommand)
+# =====================
+gamemode_survival: "&eYour gamemode has been set to &6Survival &emode."
+gamemode_creative: "&eYour gamemode has been set to &bCreative &emode."
+gamemode_spectator: "&eYour gamemode has been set to &7Spectator &emode."
+gamemode_adventure: "&eYour gamemode has been set to &aAdventure &emode."
 
-# Teleport (TP) and TPA messages
-tpa_usage: "Usage: /tpa <player>"
-tpa_request_sent: "Teleport request sent to {player}."
-tpa_request_received: "{player} has requested to teleport to you. Type /tpaccept to accept."
-tpa_request_accepted: "Teleport request accepted."
-tpa_teleporting: "Teleporting to {player}."
-tpa_no_request: "No pending teleport requests."
-tpa_player_not_found: "Player not found."
+# =====================
+# Teleport and TPA Commands
+# =====================
 
-tpahere_usage: "Usage: /tpahere <player>"
-tpahere_request_sent: "Teleport request sent to {player}."
-tpahere_request_received: "{player} has requested you teleport to them. Type /tpaccept to accept."
-tpahere_request_accepted: "Teleport request accepted."
-tpahere_teleporting: "Teleporting {player} to you."
+# /tpa command
+tpa_usage: "&cUsage: &7/tpa <player>"
+tpa_request_sent: "&aTeleport request sent to &b{player}&a."
+tpa_request_received: "&b{player} &ahas requested to teleport to you. Type &e/tpaccept &ato accept."
+tpa_request_accepted: "&aTeleport request accepted."
+tpa_teleporting: "&eTeleporting to &b{player}&e..."
+tpa_no_request: "&cNo pending teleport requests."
+tpa_player_not_found: "&cPlayer not found."
+tpa_request_denied: "&cTeleport request denied by &b{player}&c."
+tpa_request_denied_sent: "&cYou have denied the teleport request."
 
-tpa_request_denied: "Teleport request denied by {player}."
-tpa_request_denied_sent: "You have denied the teleport request."
+# /tpahere command
+tpahere_usage: "&cUsage: &7/tpahere <player>"
+tpahere_request_sent: "&aTeleport request sent to &b{player}&a."
+tpahere_request_received: "&b{player} &ahas requested you teleport to them. Type &e/tpaccept &ato accept."
+tpahere_request_accepted: "&aTeleport request accepted."
+tpahere_teleporting: "&eTeleporting &b{player} &eto you..."
 
-tp_usage: "Usage: /tp <target> or /tp <player1> <player2>"
-tp_teleported: "Teleported to {player}."
-tp_teleported_admin: "Teleported {player1} to {player2}."
+# /tp command
+tp_usage: "&cUsage: &7/tp <target> &8or &7/tp <player1> <player2>"
+tp_teleported: "&aTeleported to &b{player}&a."
+tp_teleported_admin: "&aTeleported &b{player1} &ato &b{player2}&a."
 
-tphere_usage: "Usage: /tphere <player>"
-tphere_teleported: "Teleported {player} to you."
-tphere_teleported_to: "You have been teleported to {player}."
+# /tphere command
+tphere_usage: "&cUsage: &7/tphere <player>"
+tphere_teleported: "&aTeleported &b{player} &ato you."
+tphere_teleported_to: "&aYou have been teleported to &b{player}&a."
 
-back_no_location: "No previous location found."
-back_teleported: "Teleported to your previous location."
+# /back command
+back_no_location: "&cNo previous location found."
+back_teleported: "&aTeleported to your previous location."
 
-sethome_set: "Home set successfully."
-home_not_set: "Home is not set. Use /sethome to set your home."
-home_teleported: "Teleported to your home."
+# =====================
+# Home Commands
+# =====================
+sethome_set: "&aHome set successfully."
+home_not_set: "&cHome is not set. Use &e/sethome &cto set your home."
+home_teleported: "&aTeleported to your home."
 
-setwarp_usage: "Usage: /setwarp <name>"
-setwarp_set: "Warp '{warp}' set successfully."
-warp_usage: "Usage: /warp <name>"
-warp_not_found: "Warp '{warp}' not found."
-warp_teleported: "Teleported to warp '{warp}'."
+# =====================
+# Warp Commands
+# =====================
 
-delwarp_usage: "Usage: /delwarp <name>"
-delwarp_removed: "Warp '{warp}' has been removed."
+# /setwarp command
+setwarp_usage: "&cUsage: &7/setwarp <name>"
+setwarp_set: "&aWarp '&b{warp}&a' set successfully."
 
-spawn_teleported: "Teleported to spawn."
+# /warp command
+warp_usage: "&cUsage: &7/warp <name>"
+warp_not_found: "&cWarp '&b{warp}&c' not found."
+warp_teleported: "&aTeleported to warp '&b{warp}&a'."
 
-command_player_only: "Only players can execute this command."
+# /delwarp command
+delwarp_usage: "&cUsage: &7/delwarp <name>"
+delwarp_removed: "&cWarp '&b{warp}&c' has been removed."
+
+# =====================
+# Spawn Command
+# =====================
+spawn_teleported: "&aTeleported to spawn."
+
+# =====================
+# General Messages
+# =====================
+command_player_only: "&cOnly players can execute this command."
