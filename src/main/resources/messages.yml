@@ -1,32 +1,31 @@
 # =====================
-# God Mode Command
+# GodModeCommand
 # =====================
 god_mode_enabled: "&aGod mode enabled."
 god_mode_disabled: "&cGod mode disabled."
 
 # =====================
-# Fix Command
+# FixCommand
 # =====================
 item_repaired: "&aThe item in your hand has been repaired."
+item_not_repairable: "&cThis item cannot be repaired!"
 
 # =====================
-# Trash Command
+# TrashCommand
 # =====================
 trash_inventory_title: "&8&lTrash"
 
 # =====================
-# Gamemode Command (GMCommand)
+# GMCommand
 # =====================
-gamemode_survival: "&eYour gamemode has been set to &6Survival &emode."
-gamemode_creative: "&eYour gamemode has been set to &bCreative &emode."
-gamemode_spectator: "&eYour gamemode has been set to &7Spectator &emode."
-gamemode_adventure: "&eYour gamemode has been set to &aAdventure &emode."
+gamemode_survival: "&eYour gamemode has been set to &6survival &emode."
+gamemode_creative: "&eYour gamemode has been set to &bcreative &emode."
+gamemode_spectator: "&eYour gamemode has been set to &7spectator &emode."
+gamemode_adventure: "&eYour gamemode has been set to &aadventure &emode."
 
 # =====================
-# Teleport and TPA Commands
+# Teleport (TP) & TPA
 # =====================
-
-# /tpa command
 tpa_usage: "&cUsage: &7/tpa <player>"
 tpa_request_sent: "&aTeleport request sent to &b{player}&a."
 tpa_request_received: "&b{player} &ahas requested to teleport to you. Type &e/tpaccept &ato accept."
@@ -34,60 +33,93 @@ tpa_request_accepted: "&aTeleport request accepted."
 tpa_teleporting: "&eTeleporting to &b{player}&e..."
 tpa_no_request: "&cNo pending teleport requests."
 tpa_player_not_found: "&cPlayer not found."
-tpa_request_denied: "&cTeleport request denied by &b{player}&c."
-tpa_request_denied_sent: "&cYou have denied the teleport request."
+tpa_disabled: "&cThat player has teleport requests disabled."
 
-# /tpahere command
 tpahere_usage: "&cUsage: &7/tpahere <player>"
 tpahere_request_sent: "&aTeleport request sent to &b{player}&a."
 tpahere_request_received: "&b{player} &ahas requested you teleport to them. Type &e/tpaccept &ato accept."
 tpahere_request_accepted: "&aTeleport request accepted."
 tpahere_teleporting: "&eTeleporting &b{player} &eto you..."
 
-# /tp command
+tpa_request_denied: "&cTeleport request denied by &b{player}&c."
+tpa_request_denied_sent: "&cYou have denied the teleport request."
+
 tp_usage: "&cUsage: &7/tp <target> &8or &7/tp <player1> <player2>"
 tp_teleported: "&aTeleported to &b{player}&a."
 tp_teleported_admin: "&aTeleported &b{player1} &ato &b{player2}&a."
 
-# /tphere command
 tphere_usage: "&cUsage: &7/tphere <player>"
 tphere_teleported: "&aTeleported &b{player} &ato you."
 tphere_teleported_to: "&aYou have been teleported to &b{player}&a."
 
-# /back command
 back_no_location: "&cNo previous location found."
 back_teleported: "&aTeleported to your previous location."
 
-# =====================
-# Home Commands
-# =====================
 sethome_set: "&aHome set successfully."
 home_not_set: "&cHome is not set. Use &e/sethome &cto set your home."
 home_teleported: "&aTeleported to your home."
 
-# =====================
-# Warp Commands
-# =====================
-
-# /setwarp command
 setwarp_usage: "&cUsage: &7/setwarp <name>"
 setwarp_set: "&aWarp '&b{warp}&a' set successfully."
-
-# /warp command
 warp_usage: "&cUsage: &7/warp <name>"
 warp_not_found: "&cWarp '&b{warp}&c' not found."
 warp_teleported: "&aTeleported to warp '&b{warp}&a'."
 
-# /delwarp command
 delwarp_usage: "&cUsage: &7/delwarp <name>"
 delwarp_removed: "&cWarp '&b{warp}&c' has been removed."
 
-# =====================
-# Spawn Command
-# =====================
 spawn_teleported: "&aTeleported to spawn."
 
-# =====================
-# General Messages
-# =====================
 command_player_only: "&cOnly players can execute this command."
+no_permission: "&cYou do not have permission to use this command!"
+
+# =====================
+# Non-Persistent Commands
+# =====================
+vanish_enabled: "&aYou have vanished!"
+vanish_disabled: "&cYou are no longer vanished."
+
+speed_usage: "&cUsage: &7/speed [walk|fly] <0-10> [player]"
+speed_set_self: "&aYour &e{type} &aspeed has been set to &b{speed}&a."
+speed_set_other: "&aSet &b{player}&a's &e{type} &aspeed to &b{speed}&a."
+speed_invalid: "&cInvalid speed value. Must be 0-10."
+
+fly_enabled_self: "&aFlight mode enabled."
+fly_disabled_self: "&cFlight mode disabled."
+fly_enabled_other: "&aYou enabled flight mode for &b{player}&a."
+fly_disabled_other: "&cYou disabled flight mode for &b{player}&c."
+
+kill_usage: "&cUsage: /kill <player>"
+kill_player: "&cYou have killed &b{player}&c."
+killed_by_admin: "&cYou have been killed by &b{player}&c."
+player_not_found: "&cThat player is not online or not found!"
+
+feed_self: "&aYou have been fed."
+feed_other: "&b{player} &ahas been fed."
+heal_self: "&aYou have been healed."
+heal_other: "&b{player} &ahas been healed."
+
+top_success: "&aWhoosh! Teleported to the highest block."
+jump_success: "&aJumped to the block in your line of sight!"
+
+ping_pong: "&aPong!"
+me_format: "&7* &b{player} &7{message}"
+
+broadcast_prefix: "&6[Broadcast]&r "
+broadcast_usage: "&cUsage: /broadcast <message...>"
+
+tptoggle_on: "&cYou will &lNO LONGER &r&caccept teleport requests."
+tptoggle_off: "&aYou will now accept teleport requests again."
+
+lightning_struck: "&eBoom! &6Lightning &estruck your target."
+ice_usage: "&cUsage: /ice <player>"
+ice_success: "&bChilled &f{player}&b to the core!"
+
+item_given_self: "&aGiven &b{amount}x {material} &ato yourself."
+item_invalid: "&cInvalid item type."
+
+clearinventory_self: "&aYour inventory has been cleared."
+clearinventory_other: "&b{player}&a's inventory has been cleared."
+
+fireball_launch: "&cFireball away!"
+depth_info: "&eYour current depth (Y-level) is &b{y}&e."

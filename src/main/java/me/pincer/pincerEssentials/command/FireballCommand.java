@@ -1,16 +1,17 @@
 package me.pincer.pincerEssentials.command;
 
 import me.pincer.pincerEssentials.LanguageManager;
+import org.bukkit.entity.Fireball;
+import org.bukkit.entity.Player;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
 
-public class GodModeCommand implements CommandExecutor {
+public class FireballCommand implements CommandExecutor {
     private final LanguageManager lang;
 
-    public GodModeCommand(LanguageManager lang) {
+    public FireballCommand(LanguageManager lang) {
         this.lang = lang;
     }
 
@@ -21,18 +22,17 @@ public class GodModeCommand implements CommandExecutor {
             return true;
         }
         Player player = (Player) sender;
-
-        if (!player.hasPermission("essentials.godmode")) {
+        if (!player.hasPermission("essentials.fireball")) {
             player.sendMessage(lang.getMessage("no_permission"));
             return true;
         }
 
-        boolean wasInvulnerable = player.isInvulnerable();
-        player.setInvulnerable(!wasInvulnerable);
+        Fireball fb = player.launchProjectile(Fireball.class);
+        fb.setVelocity(player.getLocation().getDirection().multiply(2.0));
+        fb.setIsIncendiary(false);
+        fb.setYield(2f);
 
-        if (!wasInvulnerable) player.sendMessage(lang.getMessage("god_mode_enabled"));
-        else player.sendMessage(lang.getMessage("god_mode_disabled"));
-
+        player.sendMessage(lang.getMessage("fireball_launch"));
         return true;
     }
 }

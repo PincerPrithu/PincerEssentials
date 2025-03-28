@@ -1,4 +1,3 @@
-// Java
 package me.pincer.pincerEssentials.listener;
 
 import org.bukkit.Bukkit;
@@ -19,12 +18,13 @@ public class OpenInventoryListener implements Listener {
 
     @EventHandler
     public void onInventoryClose(InventoryCloseEvent event) {
+        if (!(event.getPlayer() instanceof Player)) return;
         Player player = (Player) event.getPlayer();
-        UUID playerId = player.getUniqueId();
+        UUID id = player.getUniqueId();
 
-        if (taskMap.containsKey(playerId)) {
-            Bukkit.getScheduler().cancelTask(taskMap.get(playerId));
-            taskMap.remove(playerId);
+        if (taskMap.containsKey(id)) {
+            Bukkit.getScheduler().cancelTask(taskMap.get(id));
+            taskMap.remove(id);
         }
     }
 }

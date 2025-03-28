@@ -1,45 +1,48 @@
 package me.pincer.pincerEssentials.command;
 
-import me.pincer.pincerEssentials.PincerEssentials;
 import me.pincer.pincerEssentials.LanguageManager;
-import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class GMCommand implements CommandExecutor {
-    private final LanguageManager languageManager;
 
-    public GMCommand() {
-        this.languageManager = PincerEssentials.getInstance().getLanguageManager();
+public class GMCommand implements CommandExecutor {
+    private final LanguageManager lang;
+
+    public GMCommand(LanguageManager lang) {
+        this.lang = lang;
     }
 
     @Override
-    public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
-        if (!(commandSender instanceof Player)) return true;
-        Player p = (Player) commandSender;
-        if (!p.hasPermission("gamemode." + s)) {
-            p.sendMessage(ChatColor.RED + "You do not have permission to use this command.");
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (!(sender instanceof Player)) {
+            sender.sendMessage(lang.getMessage("command_player_only"));
             return true;
         }
-        switch (s) {
+        Player player = (Player) sender;
+        if (!player.hasPermission("gamemode." + label.toLowerCase())) {
+            player.sendMessage(lang.getMessage("no_permission"));
+            return true;
+        }
+
+        switch (label.toLowerCase()) {
             case "gms":
-                p.setGameMode(GameMode.SURVIVAL);
-                p.sendMessage(ChatColor.GREEN + languageManager.getMessage("gamemode_survival"));
+                player.setGameMode(GameMode.SURVIVAL);
+                player.sendMessage(lang.getMessage("gamemode_survival"));
                 break;
             case "gmc":
-                p.setGameMode(GameMode.CREATIVE);
-                p.sendMessage(ChatColor.GREEN + languageManager.getMessage("gamemode_creative"));
+                player.setGameMode(GameMode.CREATIVE);
+                player.sendMessage(lang.getMessage("gamemode_creative"));
                 break;
             case "gmsp":
-                p.setGameMode(GameMode.SPECTATOR);
-                p.sendMessage(ChatColor.GREEN + languageManager.getMessage("gamemode_spectator"));
+                player.setGameMode(GameMode.SPECTATOR);
+                player.sendMessage(lang.getMessage("gamemode_spectator"));
                 break;
             case "gma":
-                p.setGameMode(GameMode.ADVENTURE);
-                p.sendMessage(ChatColor.GREEN + languageManager.getMessage("gamemode_adventure"));
+                player.setGameMode(GameMode.ADVENTURE);
+                player.sendMessage(lang.getMessage("gamemode_adventure"));
                 break;
         }
         return true;

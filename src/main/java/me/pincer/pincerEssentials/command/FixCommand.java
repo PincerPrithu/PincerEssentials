@@ -1,6 +1,5 @@
 package me.pincer.pincerEssentials.command;
 
-import me.pincer.pincerEssentials.PincerEssentials;
 import me.pincer.pincerEssentials.LanguageManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -9,26 +8,37 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
 
-public class FixCommand implements CommandExecutor {
-    private final LanguageManager languageManager;
 
-    public FixCommand() {
-        this.languageManager = PincerEssentials.getInstance().getLanguageManager();
+public class FixCommand implements CommandExecutor {
+    private final LanguageManager lang;
+
+    public FixCommand(LanguageManager lang) {
+        this.lang = lang;
     }
 
     @Override
-    public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
-        if (!(commandSender instanceof Player)) return true;
-        Player p = (Player) commandSender;
-        ItemStack item = p.getInventory().getItemInMainHand();
-        if (item == null || !(item.getItemMeta() instanceof Damageable)) {
-            p.sendMessage(languageManager.getMessage("item_not_repairable"));
+    public boolean onCommand(CommandSender sender, Command command, String lbl, String[] args) {
+        if (!(sender instanceof Player)) {
+            sender.sendMessage(lang.getMessage("command_player_only"));
             return true;
         }
-        Damageable damageable = (Damageable) item.getItemMeta();
-        damageable.setDamage(0);
-        item.setItemMeta(damageable);
-        p.sendMessage(languageManager.getMessage("item_repaired"));
+        Player player = (Player) sender;
+        if (!player.hasPermission("essentials.fix")) {
+            player.sendMessage(lang.getMessage("no_permission"));
+            return true;
+        }
+
+        ItemStack item = player.getInventory().getItemInMainHand();
+        if (item.getType().isAir() || !(item.getItemMeta() instanceof Damageable)) {
+            player.sendMessage(lang.getMessage("item_not_repairable"));
+            return true;
+        }
+
+        Damageable meta = (Damageable) item.getItemMeta();
+        meta.setDamage(0);
+        item.setItemMeta(meta);
+
+        player.sendMessage(lang.getMessage("item_repaired"));
         return true;
     }
 }

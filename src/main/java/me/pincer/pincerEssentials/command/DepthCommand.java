@@ -7,10 +7,10 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 
-public class GodModeCommand implements CommandExecutor {
+public class DepthCommand implements CommandExecutor {
     private final LanguageManager lang;
 
-    public GodModeCommand(LanguageManager lang) {
+    public DepthCommand(LanguageManager lang) {
         this.lang = lang;
     }
 
@@ -21,18 +21,12 @@ public class GodModeCommand implements CommandExecutor {
             return true;
         }
         Player player = (Player) sender;
-
-        if (!player.hasPermission("essentials.godmode")) {
+        if (!player.hasPermission("essentials.depth")) {
             player.sendMessage(lang.getMessage("no_permission"));
             return true;
         }
-
-        boolean wasInvulnerable = player.isInvulnerable();
-        player.setInvulnerable(!wasInvulnerable);
-
-        if (!wasInvulnerable) player.sendMessage(lang.getMessage("god_mode_enabled"));
-        else player.sendMessage(lang.getMessage("god_mode_disabled"));
-
+        int y = player.getLocation().getBlockY();
+        player.sendMessage(lang.getMessage("depth_info").replace("{y}", String.valueOf(y)));
         return true;
     }
 }

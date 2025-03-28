@@ -2,7 +2,9 @@ name: PincerEssentials
 version: '1.0'
 main: me.pincer.pincerEssentials.PincerEssentials
 api-version: '1.21'
+
 commands:
+  # -- Original, persistent-based commands
   gma:
     usage: /gma
     permission: gamemode.adventure
@@ -69,3 +71,60 @@ commands:
   spawn:
     usage: /spawn
     permission: essentials.spawn
+
+  # -- New, ephemeral (non-persistence) commands
+  vanish:
+    usage: /vanish
+    permission: essentials.vanish
+  speed:
+    usage: /speed [walk|fly] <0-10> [player]
+    permission: essentials.speed
+  fly:
+    usage: /fly [player]
+    permission: essentials.fly
+  kill:
+    usage: /kill <player>
+    permission: essentials.kill
+  feed:
+    usage: /feed [player]
+    permission: essentials.feed
+  heal:
+    usage: /heal [player]
+    permission: essentials.heal
+  top:
+    usage: /top
+    permission: essentials.top
+  jump:
+    usage: /jump
+    permission: essentials.jump
+  ping:
+    usage: /ping
+    permission: essentials.ping
+  me:
+    usage: /me <message...>
+    permission: essentials.me
+  broadcast:
+    usage: /broadcast <message...>
+    permission: essentials.broadcast
+  tptoggle:
+    usage: /tptoggle
+    permission: essentials.tptoggle
+  lightning:
+    usage: /lightning [player]
+    permission: essentials.lightning
+  ice:
+    usage: /ice <player>
+    permission: essentials.ice
+  item:
+    usage: /item <material> [amount]
+    permission: essentials.item
+  clearinventory:
+    aliases: [ci, clear]
+    usage: /clearinventory [player]
+    permission: essentials.clearinventory
+  fireball:
+    usage: /fireball
+    permission: essentials.fireball
+  depth:
+    usage: /depth
+    permission: essentials.depth

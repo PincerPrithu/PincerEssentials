@@ -1,6 +1,7 @@
 package me.pincer.pincerEssentials.command;
 
 import me.pincer.pincerEssentials.PincerEssentials;
+import me.pincer.pincerEssentials.LanguageManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -15,31 +16,48 @@ import java.util.UUID;
 
 public class OpenInventoryCommand implements CommandExecutor {
     private final Map<UUID, Integer> taskMap = new HashMap<>();
+    private final LanguageManager lang;
 
-    @Override
-    public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
-        if (!(commandSender instanceof Player)) return true;
-        Player p = (Player) commandSender;
-        if (args.length == 0) return false;
-
-        Player t = Bukkit.getPlayer(args[0]);
-        if (t != null) {
-            Inventory targetInventory = t.getInventory();
-            p.openInventory(targetInventory);
-
-            int taskId = new BukkitRunnable() {
-                @Override
-                public void run() {
-                    p.updateInventory();
-                }
-            }.runTaskTimer(PincerEssentials.getInstance(), 0L, 10L).getTaskId();
-
-            taskMap.put(p.getUniqueId(), taskId);
-        }
-        return true;
+    public OpenInventoryCommand(LanguageManager lang) {
+        this.lang = lang;
     }
 
     public Map<UUID, Integer> getTaskMap() {
         return taskMap;
+    }
+
+    @Override
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+        if (!(sender instanceof Player)) return true;
+        Player opener = (Player) sender;
+
+        if (!opener.hasPermission("essentials.openinv")) {
+            opener.sendMessage(lang.getMessage("no_permission"));
+            return true;
+        }
+
+        if (args.length == 0) {
+            opener.sendMessage("Usage: /openinv <player>");
+            return true;
+        }
+
+        Player target = Bukkit.getPlayer(args[0]);
+        if (target == null) {
+            opener.sendMessage(lang.getMessage("tpa_player_not_found"));
+            return true;
+        }
+
+        Inventory targetInv = target.getInventory();
+        opener.openInventory(targetInv);
+
+        int taskId = new BukkitRunnable() {
+            @Override
+            public void run() {
+                opener.updateInventory();
+            }
+        }.runTaskTimer(PincerEssentials.getInstance(), 0L, 10L).getTaskId();
+
+        taskMap.put(opener.getUniqueId(), taskId);
+        return true;
     }
 }
