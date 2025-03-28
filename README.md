@@ -30,11 +30,9 @@ PincerEssentials is a Minecraft plugin that provides a variety of essential comm
 - **/trash**: Open a trash inventory to dispose of items.  
   - **Permission**: `essentials.trash`  
 
-### Inventory Viewing Command  
+### Inventory Viewing Commands  
 - **/openinv [player]**: View and edit another player's inventory.  
   - **Permission**: `essentials.openinv`  
-
-### Ender Chest Viewing Command  
 - **/openender [player]**: View and edit another player's ender chest.  
   - **Permission**: `essentials.openender`  
 
@@ -44,12 +42,50 @@ PincerEssentials is a Minecraft plugin that provides a variety of essential comm
 - **/tpaccept**: Accept a pending teleport request.  
   - **Permission**: `default`  
 
+### Additional Ephemeral Commands  
+- **/vanish**: Toggle vanish mode.  
+  - **Permission**: `essentials.vanish`  
+- **/speed [walk|fly] <0-10> [player]**: Adjust walk or fly speed.  
+  - **Permission**: `essentials.speed`  
+- **/fly [player]**: Toggle flight mode.  
+  - **Permission**: `essentials.fly`  
+- **/kill <player>**: Instantly kill a player.  
+  - **Permission**: `essentials.kill`  
+- **/feed [player]**: Replenish hunger.  
+  - **Permission**: `essentials.feed`  
+- **/heal [player]**: Restore health and saturation.  
+  - **Permission**: `essentials.heal`  
+- **/top**: Teleport to the highest block at your current location.  
+  - **Permission**: `essentials.top`  
+- **/jump**: Jump to the nearest solid block in your line of sight.  
+  - **Permission**: `essentials.jump`  
+- **/ping**: Check your latency.  
+  - **Permission**: `essentials.ping`  
+- **/me <message...>**: Broadcast an action message.  
+  - **Permission**: `essentials.me`  
+- **/broadcast <message...>**: Broadcast a message server-wide.  
+  - **Permission**: `essentials.broadcast`  
+- **/tptoggle**: Toggle receiving teleport requests.  
+  - **Permission**: `essentials.tptoggle`  
+- **/lightning [player]**: Strike lightning at a player's location.  
+  - **Permission**: `essentials.lightning`  
+- **/ice <player>**: Freeze a player (simulate freeze effect).  
+  - **Permission**: `essentials.ice`  
+- **/item <material> [amount]**: Give yourself an item.  
+  - **Permission**: `essentials.item`  
+- **/clearinventory [player]**: Clear a player's inventory.  
+  - **Permission**: `essentials.clearinventory`  
+- **/fireball**: Launch a fireball.  
+  - **Permission**: `essentials.fireball`  
+- **/depth**: Display your current Y-level.  
+  - **Permission**: `essentials.depth`  
+
 ## Customizable Messages  
 
 All messages sent by the plugin can be customized through the `messages.yml` file. This allows server administrators to tailor the plugin's messages to their preferences.  
 
-### Example `messages.yml`  
-```yaml  
+### Example `messages.yml`
+```yaml
 # GodModeCommand messages  
 god_mode_enabled: "God mode enabled."  
 god_mode_disabled: "God mode disabled."  
@@ -103,10 +139,8 @@ tpa_player_not_found: "Player not found."
 ### Trash Command  
 - **/trash**: Open a trash inventory to dispose of items.  
 
-### Inventory Viewing Command  
+### Inventory Viewing Commands  
 - **/openinv [player]**: View and edit another player's inventory.  
-
-### Ender Chest Viewing Command  
 - **/openender [player]**: View and edit another player's ender chest.  
 
 ### Teleport Request Commands  
@@ -115,4 +149,4 @@ tpa_player_not_found: "Player not found."
 
 ## License  
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.  
+This project is licensed under the MIT License. See the `LICENSE` file for details.
